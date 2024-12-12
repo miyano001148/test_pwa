@@ -59,6 +59,11 @@ export const SideBar = (props: Props) => {
                             <ListItemText secondary='Camera' />
                         </ListitemButton>
                     </Listitem>
+                    <Listitem disablePadding>
+                        <ListitemButton onClick={() => navigate('/Geo')}>
+                            <ListItemText secondary='Geo' />
+                        </ListitemButton>
+                    </Listitem>
                 </List>
             </DrawerList>
         </Drawer>
