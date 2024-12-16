@@ -15,7 +15,7 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename={process.env.NODE_ENV === 'development' ? '/' :'/test_pwa/'}>
       <AppRoutes />
     </BrowserRouter>
     {/* <App /> */}
