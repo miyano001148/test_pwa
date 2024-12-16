@@ -1,7 +1,7 @@
 import React, {useState, useEffect, useRef } from 'react';
-import './App.css';
-import { ToolBar } from './components/ToolBar/ToolBar';
-import { SideBar } from './components/ToolBar/SideBar';
+import '../../App.css';
+import { ToolBar } from '../ToolBar/ToolBar';
+import { SideBar } from '../ToolBar/SideBar';
 import GlobalStyles from '@mui/material/GlobalStyles';
 
 const ErrorText = () => (

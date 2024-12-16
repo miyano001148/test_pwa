@@ -1,8 +1,9 @@
-import './App.css';
+import '../../App.css';
 import Webcam from 'react-webcam';
 import { useRef, useState, useCallback } from 'react';
-import { ToolBar } from './components/ToolBar/ToolBar';
-import { SideBar } from './components/ToolBar/SideBar';
+import { ToolBar } from '../ToolBar/ToolBar';
+import { SideBar } from '../ToolBar/SideBar';
+import useWindowSize from '../useWindowSize'
 import GlobalStyles from '@mui/material/GlobalStyles';
 
 const videoConstraints = {
@@ -27,6 +28,8 @@ function Camera() {
       setDrawerOpen((drawerOpen) => !drawerOpen)
     }
 
+    const [width, height] = useWindowSize();
+
     return (
         <div className="App">
         <GlobalStyles styles={{ body: {margin: 0, padding: 0}}} />
@@ -41,8 +44,8 @@ function Camera() {
               <div>
                 <Webcam
                   audio={false}
-                  width={540}
-                  height={360}
+                  width={width}
+                  height={height}
                   ref={webcamRef}
                   screenshotFormat='image/jpeg'
                   videoConstraints={videoConstraints}

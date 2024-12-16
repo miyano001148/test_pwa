@@ -2,6 +2,7 @@ import { useState } from 'react';
 import {Wrapper, Status} from '@googlemaps/react-wrapper';
 import { ToolBar } from '../ToolBar/ToolBar';
 import { SideBar } from '../ToolBar/SideBar';
+import useWindowSize from '../useWindowSize'
 import GlobalStyles from '@mui/material/GlobalStyles';
 import Maps from './Maps'
 
@@ -37,14 +38,17 @@ const GoogleMaps = () => {
       setDrawerOpen((drawerOpen) => !drawerOpen)
     }
 
+    const [width, height] = useWindowSize();
+
     return (
         <div className="App">
         <GlobalStyles styles={{ body: {margin: 0, padding: 0}}} />
-        <ToolBar onToggleDrawer={ handleToggleDrawer }/>
+        <ToolBar onToggleDrawer={ handleToggleDrawer } />
         <SideBar drawerOpen={ drawerOpen } onToggleDrawer={ handleToggleDrawer }/>
         <Wrapper apiKey={MAP_API_KEY} render={render}>
             <div className='main-container'>
-                <Maps style={{ maxWidth: '800px', aspectRatio: '16/9', margin: '10px auto' }} center={ position }>
+                {/* <Maps style={{ width: '800px', aspectRatio: '16/9', margin: '10px auto' }} center={ position }>*/}
+                <Maps style={{ width: width, height: height}} center={ position }>
                 </Maps>
             </div>
         </Wrapper>
