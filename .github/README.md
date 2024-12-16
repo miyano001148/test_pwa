@@ -25,5 +25,5 @@
 1. [node](https://nodejs.org/dist/)をダウンロードし、インストールを行う。
 2.  環境変数のPathを設定する。(設定方法がわからない場合は[こちら](https://win11lab.info/win11-environment-variable/))
 3.  PCを再起動する
-4.  コマンドプロンプトで「$ node -v」を実行し、バージョンが表示されればnodeの導入は完了。
+4.  コマンドプロンプトで`$ node -v`を実行し、バージョンが表示されればnodeの導入は完了。
 
