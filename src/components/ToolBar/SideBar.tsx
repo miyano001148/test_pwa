@@ -65,8 +65,8 @@ export const SideBar = (props: Props) => {
                         </ListitemButton>
                     </Listitem>
                     <Listitem disablePadding>
-                        <ListitemButton onClick={() => navigate('/Maps')}>
-                            <ListItemText secondary='Maps' />
+                        <ListitemButton onClick={() => navigate('/GoogleMaps')}>
+                            <ListItemText secondary='GoogleMaps' />
                         </ListitemButton>
                     </Listitem>
                 </List>
