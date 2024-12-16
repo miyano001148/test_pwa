@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import {Wrapper, Status} from '@googlemaps/react-wrapper';
-import { ToolBar } from '../../components/ToolBar/ToolBar';
-import { SideBar } from '../../components/ToolBar/SideBar';
+import { ToolBar } from '../ToolBar/ToolBar';
+import { SideBar } from '../ToolBar/SideBar';
 import GlobalStyles from '@mui/material/GlobalStyles';
 import Maps from './Maps'
 

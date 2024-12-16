@@ -2,7 +2,7 @@ import { Routes, Route } from 'react-router-dom';
 import App from './App'
 import Camera from './Camera'
 import Geo from './Geo'
-import GoogleMaps from './pages/Map/GoogleMaps'
+import GoogleMaps from './components/Map/GoogleMaps'
 
 const AppRoutes = () => {
     return(
