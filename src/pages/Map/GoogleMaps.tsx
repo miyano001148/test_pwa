@@ -1,5 +1,8 @@
 import { useState } from 'react';
 import {Wrapper, Status} from '@googlemaps/react-wrapper';
+import { ToolBar } from '../../components/ToolBar/ToolBar';
+import { SideBar } from '../../components/ToolBar/SideBar';
+import GlobalStyles from '@mui/material/GlobalStyles';
 import Maps from './Maps'
 
 const MAP_API_KEY = 'AIzaSyBpSWUbFGu6BhG_EEcEV2yaUZDyrSB1Y4U';
@@ -29,13 +32,23 @@ const GoogleMaps = () => {
     //     }
     // };
 
+    const [drawerOpen, setDrawerOpen] = useState(false);
+    const handleToggleDrawer = () => {
+      setDrawerOpen((drawerOpen) => !drawerOpen)
+    }
+
     return (
+        <div className="App">
+        <GlobalStyles styles={{ body: {margin: 0, padding: 0}}} />
+        <ToolBar onToggleDrawer={ handleToggleDrawer }/>
+        <SideBar drawerOpen={ drawerOpen } onToggleDrawer={ handleToggleDrawer }/>
         <Wrapper apiKey={MAP_API_KEY} render={render}>
             <div className='main-container'>
                 <Maps style={{ maxWidth: '800px', aspectRatio: '16/9', margin: '10px auto' }} center={ position }>
                 </Maps>
             </div>
         </Wrapper>
+        </div>
     );
 }
 
