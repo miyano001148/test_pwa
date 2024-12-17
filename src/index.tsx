@@ -1,21 +1,17 @@
 import React from 'react';
-import Webcam from 'react-webcam';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
 import AppRoutes from './AppRoutes';
 import { BrowserRouter } from 'react-router-dom';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
-
-const WebcamComponent = () => <Webcam />;
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <BrowserRouter basename={(process.env.NODE_ENV === 'development') || (process.env.NODE_ENVm === 'stageng') ? '/' :'/test_pwa/'}>
+    <BrowserRouter basename={(process.env.NODE_ENV === 'development') ? '/' :'/test_pwa/'}>
       <AppRoutes />
     </BrowserRouter>
     {/* <App /> */}
