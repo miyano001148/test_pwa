@@ -13,6 +13,8 @@ function App() {
     setDrawerOpen((drawerOpen) => !drawerOpen)
   }
 
+  console.log(process.env.NODE_ENV)
+
   return (
     <div className="App">
       <GlobalStyles styles={{ body: {margin: 0, padding: 0}}} />
