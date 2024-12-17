@@ -22,7 +22,7 @@
 
 最低限の開発環境の構築手順を記載
 
-1. [node](https://nodejs.org/dist/)をダウンロードし、インストールを行う。
+1. [node](https://nodejs.org/dist/)をダウンロードし、解凍したディレクトリを任意の場所に配置する。
 2.  環境変数のPathを設定する。(設定方法がわからない場合は[こちら](https://win11lab.info/win11-environment-variable/))
 3.  PCを再起動する
 4.  コマンドプロンプトで`$ node -v`を実行し、バージョンが表示されればnodeの導入は完了。
