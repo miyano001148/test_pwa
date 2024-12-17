@@ -31,7 +31,6 @@ function Photo() {
             const response = await axios.get(url, {
                 responseType: "blob",
             });
-            // const fileName = url.substring(url.lastIndexOf("/") + 1)
             saveAs(response.data);
             navigate('/Camera');
         } catch (error) {
@@ -56,8 +55,8 @@ function Photo() {
                 <button onClick={() => imageSaving(url)}>
                 保存
                 </button>
-                <button onClick={() => imageDeletion}>
-                削除
+                <button onClick={imageDeletion}>
+                保存せず戻る
                 </button>
               </div>
             </>

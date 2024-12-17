@@ -5,6 +5,8 @@ import { ToolBar } from './components/ToolBar/ToolBar';
 import { SideBar } from './components/ToolBar/SideBar';
 import GlobalStyles from '@mui/material/GlobalStyles';
 
+import Notification from './components/Firebase/Notification'
+
 function App() {
   const [drawerOpen, setDrawerOpen] = useState(false);
   const handleToggleDrawer = () => {
@@ -30,6 +32,7 @@ function App() {
           Learn React
         </a>
       </header>
+      <Notification />
     </div>
   );
 }
