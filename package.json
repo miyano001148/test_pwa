@@ -2,7 +2,7 @@
   "name": "test_pwa",
   "version": "0.1.0",
   "private": true,
-  "homepage":"https://miyano001148.github.io/test_pwa/",
+  "homepage": "https://miyano001148.github.io/test_pwa/",
   "dependencies": {
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",
@@ -16,6 +16,8 @@
     "@types/node": "^17.0.45",
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.3",
+    "axios": "^1.7.9",
+    "file-saver": "^2.0.5",
     "firebase": "^11.0.2",
     "gh-pages": "^6.2.0",
     "react": "^18.3.1",
@@ -64,7 +66,9 @@
     ]
   },
   "devDependencies": {
+    "@types/file-saver": "^2.0.7",
     "@types/google.maps": "^3.58.1",
-    "node-fetch": "^2.7.0"
+    "node-fetch": "^2.7.0",
+    "workbox-cli": "^7.3.0"
   }
 }

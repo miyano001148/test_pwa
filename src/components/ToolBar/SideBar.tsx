@@ -21,13 +21,11 @@ const DrawerHeader = styled('div')(() => ({
     justifyContent: 'center',
     alignItems: 'center',
     padding: '1em',
-    // backgroundColor:
     color: '#ffffff',
     fontFamily: '-apple-system, BlinkMacSystemFont, Roboto, sans-serif',
 }));
 
 const DrawerAvater = styled(Avatar)(({ theme }) => ({
-    // backgroundColor
     width: theme.spacing(6),
     height: theme.spacing(6),
 }));

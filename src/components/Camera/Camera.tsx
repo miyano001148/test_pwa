@@ -1,10 +1,11 @@
 import '../../App.css';
 import Webcam from 'react-webcam';
-import { useRef, useState, useCallback } from 'react';
+import { useCallback, useRef, useState, useEffect } from 'react';
 import { ToolBar } from '../ToolBar/ToolBar';
 import { SideBar } from '../ToolBar/SideBar';
 import useWindowSize from '../useWindowSize'
 import GlobalStyles from '@mui/material/GlobalStyles';
+import { useNavigate } from 'react-router-dom';
 
 const videoConstraints = {
     width: 720,
@@ -13,15 +14,18 @@ const videoConstraints = {
 }
 
 function Camera() {
-    const [isCaptureEnable, setCaptureEnable] = useState<boolean>(false);
     const webcamRef = useRef<Webcam>(null);
-    const [url, setUrl] = useState<string | null>(null);
+    const navigate = useNavigate();
+    
     const capture = useCallback(() => {
       const imageSrc = webcamRef.current?.getScreenshot();
       if (imageSrc) {
-        setUrl(imageSrc);
-      } 
-    }, [webcamRef]); 
+        console.log(imageSrc);
+        navigate('/Photo', {
+          state: imageSrc
+        });
+      }
+    }, [webcamRef]);
 
     const [drawerOpen, setDrawerOpen] = useState(false);
     const handleToggleDrawer = () => {
@@ -34,40 +38,19 @@ function Camera() {
         <div className="App">
         <GlobalStyles styles={{ body: {margin: 0, padding: 0}}} />
         <ToolBar onToggleDrawer={ handleToggleDrawer }/>
-        <SideBar drawerOpen={ drawerOpen } onToggleDrawer={ handleToggleDrawer }/>
+        <SideBar drawerOpen={ drawerOpen } onToggleDrawer={() => handleToggleDrawer }/>
         <header className="App-header">
-          {isCaptureEnable || (
-            <button onClick={() => setCaptureEnable(true)}>開始</button>
-          )}
-          {isCaptureEnable && (
-            <>
-              <div>
-                <Webcam
-                  audio={false}
-                  width={width}
-                  height={height}
-                  ref={webcamRef}
-                  screenshotFormat='image/jpeg'
-                  videoConstraints={videoConstraints}
-                />
-              </div>
-              <button onClick={capture}>撮影</button>
-            </>
-          )}
-          {url &&(
-            <>
-              <div>
-                <button onClick={() => {
-                  setUrl(null);
-                }}>
-                削除
-                </button>
-              </div>
-              <div>
-                <img src={url} alt="screenshot" />
-              </div>
-            </>
-          )}
+            <div>
+              <Webcam
+                audio={false}
+                width={width}
+                height={height}
+                ref={webcamRef}
+                screenshotFormat='image/jpeg'
+                videoConstraints={videoConstraints}
+               />
+            </div>
+            <button style={{zIndex:1}} onClick={capture}>撮影</button>
         </header>
       </div>  
     )
