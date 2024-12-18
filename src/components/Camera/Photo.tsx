@@ -1,17 +1,13 @@
 import '../../App.css';
-import Webcam from 'react-webcam';
-import { useRef, useState } from 'react';
+import { useState } from 'react';
 import { ToolBar } from '../ToolBar/ToolBar';
 import { SideBar } from '../ToolBar/SideBar';
-import useWindowSize from '../useWindowSize'
 import GlobalStyles from '@mui/material/GlobalStyles';
 import { useNavigate, useLocation } from 'react-router-dom';
 import axios from 'axios';
 import { saveAs } from 'file-saver';
 
 function Photo() {
-    // const [url, setUrl] = useState<string | null>(null);
-    const webcamRef = useRef<Webcam>(null);
     const location = useLocation();
     const navigate = useNavigate();
     const url = location.state as string;

@@ -1,6 +1,6 @@
 import '../../App.css';
 import Webcam from 'react-webcam';
-import { useCallback, useRef, useState, useEffect } from 'react';
+import { useCallback, useRef, useState } from 'react';
 import { ToolBar } from '../ToolBar/ToolBar';
 import { SideBar } from '../ToolBar/SideBar';
 import useWindowSize from '../useWindowSize'

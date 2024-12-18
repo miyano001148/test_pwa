@@ -4,6 +4,7 @@ import Camera from './components/Camera/Camera'
 import Geo from './components/Map/Geo'
 import GoogleMaps from './components/Map/GoogleMaps'
 import Photo from './components/Camera/Photo'
+import SendNotification from './components/Firebase/sendNotification'
 
 const AppRoutes = () => {
     return(
@@ -13,6 +14,7 @@ const AppRoutes = () => {
             <Route path='/Geo' element={<Geo />} />
             <Route path='/GoogleMaps' element={<GoogleMaps />} />
             <Route path='/Photo' element={<Photo />} />
+            <Route path='/Push' element={<SendNotification />} />
         </Routes>
     )
 }

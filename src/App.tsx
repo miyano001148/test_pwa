@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import { useRef, useState, useCallback } from 'react';
+import { useState } from 'react';
 import { ToolBar } from './components/ToolBar/ToolBar';
 import { SideBar } from './components/ToolBar/SideBar';
 import GlobalStyles from '@mui/material/GlobalStyles';

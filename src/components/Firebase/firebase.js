@@ -1,6 +1,8 @@
 import { initializeApp } from "firebase/app";
 import { getMessaging, getToken, onMessage } from "firebase/messaging";
+import localforage from "localforage";
 
+const localForageKey='fcm_token'
 
 const firebaseConfig = {
   apiKey: "AIzaSyAzyABVAj5C2RegiedzIml3dXsw7riBu24",
@@ -13,12 +15,16 @@ const firebaseConfig = {
 
 initializeApp(firebaseConfig);
 const messaging = getMessaging();
-
+// tokenの取得
 export const requestForToken = () => {
   return getToken(messaging, { vapidKey: "BOJZY_oRK0Z0Bqdi6RgbHj_Fy1hOR4RiBSeG3C5rT_rB07EfqNEpiauzGHK-_a7CeHFwaAaBGftpjnJ2ZQQcQOk" })
     .then((currentToken) => {
       if (currentToken) {
         console.log("current token for client: ", currentToken);
+        // ブラウザ内ストレージに保存
+        if(localforage.getItem(localForageKey) === null) {
+          localforage.setItem(localForageKey, String(currentToken));
+        }
       } else {
         console.log("No registration token available. Request permission to generate one.");
       }
