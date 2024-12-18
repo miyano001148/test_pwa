@@ -6,6 +6,7 @@ import GlobalStyles from '@mui/material/GlobalStyles';
 import { useNavigate, useLocation } from 'react-router-dom';
 import axios from 'axios';
 import { saveAs } from 'file-saver';
+import Button from '@mui/material/Button';
 
 function Photo() {
     const location = useLocation();
@@ -18,7 +19,6 @@ function Photo() {
     }
     // 画像削除
     const imageDeletion = () => {
-        // setUrl(null);
         navigate('/Camera');
     }
     // 画像保存
@@ -48,12 +48,12 @@ function Photo() {
           {url &&(
             <>
               <div>
-                <button onClick={() => imageSaving(url)}>
+                <Button variant='outlined' onClick={() => imageSaving(url)}>
                 保存
-                </button>
-                <button onClick={imageDeletion}>
+                </Button>
+                <Button variant='outlined' onClick={imageDeletion}>
                 保存せず戻る
-                </button>
+                </Button>
               </div>
             </>
           )}

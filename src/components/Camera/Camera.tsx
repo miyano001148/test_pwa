@@ -6,6 +6,7 @@ import { SideBar } from '../ToolBar/SideBar';
 import useWindowSize from '../useWindowSize'
 import GlobalStyles from '@mui/material/GlobalStyles';
 import { useNavigate } from 'react-router-dom';
+import Button from '@mui/material/Button';
 
 const videoConstraints = {
     width: 720,
@@ -50,7 +51,7 @@ function Camera() {
                 videoConstraints={videoConstraints}
                />
             </div>
-            <button style={{zIndex:1}} onClick={capture}>撮影</button>
+            <Button variant='outlined' onClick={capture}>撮影</Button>
         </header>
       </div>  
     )
