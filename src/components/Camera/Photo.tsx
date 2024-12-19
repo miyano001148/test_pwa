@@ -43,10 +43,6 @@ function Photo() {
           {url &&(
             <div>
               <img src={url} alt="screenshot" />
-            </div>
-          )}
-          {url &&(
-            <>
               <div>
                 <Button variant='outlined' onClick={() => imageSaving(url)}>
                 保存
@@ -55,9 +51,8 @@ function Photo() {
                 保存せず戻る
                 </Button>
               </div>
-            </>
+            </div>
           )}
-
         </header>
       </div>  
     )

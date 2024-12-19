@@ -5,10 +5,9 @@ type Props = google.maps.MapOptions & {
     style?: React.CSSProperties;
     children?: React.ReactNode;
     mapId: string;
-    onClick?: (e: google.maps.MapMouseEvent) => void;
 };
 
-const Maps = ({ children, className, style, onClick, mapId, ...options}: Props) => {
+const Maps = ({ children, className, style, mapId, ...options}: Props) => {
     const ref = useRef<HTMLDivElement>(null);
     const [map, setMap] = useState<google.maps.Map>();
 
@@ -20,13 +19,9 @@ const Maps = ({ children, className, style, onClick, mapId, ...options}: Props) 
                 zoom: options.zoom || 16,
             });
 
-            if (onClick) {
-                mapInstance.addListener('click', onClick);
-            }
-
             setMap(mapInstance);
         }
-    }, [ref, map, options.center, options.zoom, onClick, mapId]);
+    }, [ref, map, options.center, options.zoom, mapId]);
 
     useEffect(() => {
         if (map && options.center) {
@@ -35,7 +30,7 @@ const Maps = ({ children, className, style, onClick, mapId, ...options}: Props) 
 
         const _ = new google.maps.marker.AdvancedMarkerElement({
             map,
-            position: {lat: 35.7140371, lng: 139.7925173}
+            position: options.center
         })
     }, [map, options.center]);
 

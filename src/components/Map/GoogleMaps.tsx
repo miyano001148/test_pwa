@@ -9,20 +9,19 @@ import Maps from './Maps'
 const MAP_API_KEY = 'AIzaSyBpSWUbFGu6BhG_EEcEV2yaUZDyrSB1Y4U';
 const MAP_ID = '9923f3710b423640';
 
-type Props = {
-    lat: number,
-    lng: number,
-};
-
-const GoogleMaps = () => {    
+const GoogleMaps = () => {
+    const [position, setPosition] = useState({ lat: 35.7140371, lng: 139.7925173});
+    
     const render = (status: Status) => {
+        if ('geolocation' in navigator) {
+            // 現在地の取得(TODO: getCurrentPositionは精度が悪いので修正したい。)
+            navigator.geolocation.getCurrentPosition(position => {
+                const { latitude, longitude } = position.coords;
+                setPosition({ lat: latitude, lng: longitude});
+            });            
+        }
         return <h1>{status}</h1>
     }
-
-    const position: Props = {
-        lat: 35.7140371,
-        lng: 139.7925173
-    };
 
     const [drawerOpen, setDrawerOpen] = useState(false);
     const handleToggleDrawer = () => {
