@@ -26,4 +26,6 @@
 2.  環境変数のPathを設定する。(設定方法がわからない場合は[こちら](https://win11lab.info/win11-environment-variable/))
 3.  PCを再起動する
 4.  コマンドプロンプトで`$ node -v`を実行し、バージョンが表示されればnodeの導入は完了。
+5.  コマンドプロンプトで`C:\Users\{ユーザー名}\{リポジトリの配置場所}\test_pwa`へ移動し`$ npm install`を行う。
+6. `$ npm start`でlocalhostが立ち上がるのでブラウザで開く(localhost:3000)
 

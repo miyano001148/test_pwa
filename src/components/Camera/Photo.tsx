@@ -17,7 +17,7 @@ function Photo() {
     const handleToggleDrawer = () => {
       setDrawerOpen((drawerOpen) => !drawerOpen)
     }
-    // 画像削除
+    // 前の画面に戻る
     const imageDeletion = () => {
         navigate('/Camera');
     }
