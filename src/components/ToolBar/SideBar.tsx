@@ -41,6 +41,8 @@ export const SideBar = (props: Props) => {
 
         <Drawer variant='temporary' open={props.drawerOpen} onClose={props.onToggleDrawer}>
             <DrawerList role='presentation' onClick={props.onToggleDrawer}>
+                <DrawerHeader>
+                </DrawerHeader>
                 <List disablePadding>
                     <Listitem disablePadding>
                         <ListitemButton onClick={() => navigate('/')}>
